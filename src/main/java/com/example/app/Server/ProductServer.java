@@ -19,4 +19,9 @@ public class ProductServer {
             return Product;
         }
 
+        public product getid(int Productid){
+            return Product.stream().filter(product -> product.getProductId()==Productid)
+                    .findFirst().get();
+        }
+
 }

@@ -25,8 +25,16 @@ public class ProductServer {
                     .findFirst().orElse(new product(0,"sorry product is not found",0));
         }
 
-        public void addProduct(product pro){
+        public void addProduct(product pro) {
             Product.add(pro);
+        }
+
+        public void UpdateProduct(product pro){
+            int index =0;
+            for (int i=0;i<Product.size();i++)
+                if (Product.get(i).getProductId()==pro.getProductId())
+                    index=i;
+            Product.set(index,pro);
         }
 
 }

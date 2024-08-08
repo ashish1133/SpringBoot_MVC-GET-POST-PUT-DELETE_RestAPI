@@ -22,10 +22,16 @@ public class ProductController {
             public product getId(@PathVariable int Productid){
                 return server.getid(Productid) ;
             }
+
             @PostMapping("/product")
             public void addProduct(@RequestBody product pro){
                 System.out.println(pro);
                 server.addProduct(pro);
+            }
+
+            @PutMapping("/product")
+            public void UpdateProduct(@RequestBody product pro){
+                server.UpdateProduct(pro);
             }
 
 }
